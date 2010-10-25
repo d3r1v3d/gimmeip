@@ -1,0 +1,23 @@
+%h1 Listing ips
+
+%table
+  %tr
+    %th Address
+    %th Name
+    %th Description
+    %th
+    %th
+    %th
+
+  - @ips.each do |ip|
+    %tr
+      %td= ip.address
+      %td= ip.name
+      %td= ip.description
+      %td= link_to 'Show', ip
+      %td= link_to 'Edit', edit_ip_path(ip)
+      %td= link_to 'Destroy', ip, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Ip', new_ip_path

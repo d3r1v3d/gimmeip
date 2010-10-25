@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Address:
+  = @ip.address
+%p
+  %b Name:
+  = @ip.name
+%p
+  %b Description:
+  = @ip.description
+
+= link_to 'Edit', edit_ip_path(@ip)
+\|
+= link_to 'Back', ips_path
