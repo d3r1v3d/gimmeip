@@ -2,16 +2,17 @@
 %html
     %head
         %title Gimme IP
-        = stylesheet_link_tag :all
         = stylesheet_link_tag :flutie
-        = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Neuton&subset=latin'
+        = stylesheet_link_tag :all
+        = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Droid+Serif&subset=latin'
         = javascript_include_tag :defaults
         = csrf_meta_tag
     %body
         #header
             .logo 
-                :markdown
-                    **Gimme IP**
+                %h1
+                    :markdown
+                        **Gimme IP**
             .user_panel
                 %ul
                     - if user_signed_in?
@@ -20,7 +21,8 @@
                                 Welcome **[#{h current_user.name}](#{edit_user_registration_path(current_user)})**
                     = render 'devise/menu/registration_items'
                     = render 'devise/menu/login_items'
-        #notifications
-            .notice= notice
-            .alert= alert
-        = yield
+        #content
+            #notifications
+                .notice= notice
+                .alert= alert
+            = yield

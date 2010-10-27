@@ -1,31 +1,6 @@
-/* General */
-body { 
-    background-color: #fff; 
-    color: #333;
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Droid Serif', verdana, arial, serif;
 }
-body, p, ol, ul, td {
-    font-size:   13px;
-    line-height: 18px;
-}
-pre {
-    background-color: #eee;
-    padding: 10px;
-    font-size: 11px;
-}
-a {
-    color: #000;
-}
-a:visited {
-    color: #666;
-}
-a:hover {
-    background-color:#000;
-    color: #fff;
-}
-.clear {
-    clear: both;
-}
-/* Scaffold */
 div.field, div.actions {
     margin-bottom: 10px;
 }
@@ -56,12 +31,14 @@ div.field, div.actions {
     color: #fff;
 }
 #error_explanation ul li {
-    font-size: 12px;
-    list-style: square;
 }
 /* Header */
-#header {
+#header, #content {
+    float: left;
     width: 100%;
+}
+#header p {
+    margin: 0;
 }
 #header .logo, #header .user_panel {
     display: inline;
@@ -69,13 +46,21 @@ div.field, div.actions {
 }
 #header .logo {
     width: 60%;
-    font-family: 'Neuton', verdana, arial, serif;
-    font-size: 30px;
+    line-height: 30px;
 }
 #header .user_panel {
     width: 40%;
 }
+#header .user_panel h1 {
+    line-height: 36px;
+}
 #header .user_panel ul {
+    float: right;
     margin: 0;
     list-style-type: none;
+}
+#header .user_panel ul li { 
+    float:left;
+    margin-left: 10px;
+    line-height: 30px;
 }
