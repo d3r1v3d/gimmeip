@@ -14,7 +14,10 @@ class User < ActiveRecord::Base
     validates_uniqueness_of :name, :email, :case_sensitive => false
     # has_friendly_id :name, :use_slug => true, :strip_non_ascii => true
 
-    # Allow users to log-in using their username or e-mail address.
+    has_many :ips, :dependent => :nullify
+    validates_associated :ips
+
+    # Allow users to log-in using their username or e-mail address
     def self.find_for_database_authentication(conditions)
         value = conditions[authentication_keys.first]
         where(['name = :value OR email = :value', { :value => value }]).first

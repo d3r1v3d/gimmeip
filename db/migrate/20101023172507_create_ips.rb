@@ -1,7 +1,7 @@
 class CreateIps < ActiveRecord::Migration
     def self.up
         create_table :ips do |t|
-            t.string :address
+            t.string :address, :null => false
             t.string :name
             t.text   :description
 
