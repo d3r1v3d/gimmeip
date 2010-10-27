@@ -68,8 +68,14 @@ div.field, div.actions {
     float: left;
 }
 #header .logo {
+    width: 60%;
     font-family: 'Neuton', verdana, arial, serif;
     font-size: 30px;
 }
 #header .user_panel {
+    width: 40%;
+}
+#header .user_panel ul {
+    margin: 0;
+    list-style-type: none;
 }

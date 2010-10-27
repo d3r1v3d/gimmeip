@@ -13,13 +13,14 @@
                 :markdown
                     **Gimme IP**
             .user_panel
-                %ul.hmenu
+                %ul
                     - if user_signed_in?
                         %li
                             :markdown
                                 Welcome **[#{h current_user.name}](#{edit_user_registration_path(current_user)})**
                     = render 'devise/menu/registration_items'
                     = render 'devise/menu/login_items'
-        .notice= notice
-        .alert= alert
+        #notifications
+            .notice= notice
+            .alert= alert
         = yield
