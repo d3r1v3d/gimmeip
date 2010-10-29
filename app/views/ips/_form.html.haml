@@ -1,19 +1,22 @@
 = form_for @ip do |f|
-  -if @ip.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@ip.errors.count, "error")} prohibited this ip from being saved:"
-      %ul
-        - @ip.errors.full_messages.each do |msg|
-          %li= msg
+    -if @ip.errors.any?
+        #error_explanation
+            %h2= "#{pluralize(@ip.errors.count, "error")} prohibited this ip from being saved:"
+            %ul
+                - @ip.errors.full_messages.each do |msg|
+                    %li= msg
 
-  .field
-    = f.label :address
-    = f.text_field :address
-  .field
-    = f.label :name
-    = f.text_field :name
-  .field
-    = f.label :description
-    = f.text_area :description
-  .actions
-    = f.submit 'Save'
+    .field
+        = f.label :address
+        = f.text_field :address
+    .field
+        = f.label :name
+        = f.text_field :name
+    .field
+        = f.label :description
+        = f.text_area :description
+    .field
+        = f.label :user_id, 'Point of Contact'
+        = f.select :user_id, User.all.collect{ |u| [u.name, u.id] }
+    .actions
+        = f.submit 'Save'

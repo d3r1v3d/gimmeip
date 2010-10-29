@@ -11,8 +11,13 @@ class User < ActiveRecord::Base
     attr_accessible :name, :email, :password, :password_confirmation, :remember_me
 
     validates_presence_of :name
-    validates_uniqueness_of :name, :email, :case_sensitive => false
+    validates_uniqueness_of :name, :case_sensitive => false
     # has_friendly_id :name, :use_slug => true, :strip_non_ascii => true
+
+    has_and_belongs_to_many :roles
+    def role?(role)
+        return !!self.roles.find_by_name(role.to_s.camelize)
+    end
 
     has_many :ips, :dependent => :nullify
     validates_associated :ips

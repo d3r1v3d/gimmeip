@@ -1,5 +1,18 @@
+body {
+    background-color: #eaeaea;
+}
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Droid Serif', verdana, arial, serif;
+}
+td {
+    line-height: 16px;
+    border-color: #bbb;
+}
+td p {
+    margin: 0;
+}
+th {
+    border-color: #999;
 }
 div.field, div.actions {
     margin-bottom: 10px;
@@ -30,37 +43,58 @@ div.field, div.actions {
     background-color: #c00;
     color: #fff;
 }
-#error_explanation ul li {
+#error_explanation ul {
+    margin: 0;
 }
 /* Header */
 #header, #content {
     float: left;
     width: 100%;
 }
+#header {
+    color: white;
+    background-color: #333;
+    border-bottom: 2px solid #999;
+}
 #header p {
     margin: 0;
+}
+#header a {
+    color: #AECBEF;
+}
+#header h1 {
+    margin: 0;
+    margin-left: 20px;
 }
 #header .logo, #header .user_panel {
     display: inline;
     float: left;
 }
+#header .logo p, #header .user_panel ul li {
+    line-height: 50px;
+}
 #header .logo {
     width: 60%;
-    line-height: 30px;
+}
+#header .logo a {
+    text-decoration: none;
 }
 #header .user_panel {
     width: 40%;
 }
-#header .user_panel h1 {
-    line-height: 36px;
-}
 #header .user_panel ul {
     float: right;
     margin: 0;
+    margin-right: 20px;
     list-style-type: none;
 }
 #header .user_panel ul li { 
     float:left;
     margin-left: 10px;
-    line-height: 30px;
+}
+#content_inner {
+    padding: 20px;
+}
+#links {
+    margin-bottom: 20px;
 }

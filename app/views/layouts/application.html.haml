@@ -12,7 +12,7 @@
             .logo 
                 %h1
                     :markdown
-                        **Gimme IP**
+                        **[Gimme IP](#{h root_url})**
             .user_panel
                 %ul
                     - if user_signed_in?
@@ -20,9 +20,16 @@
                             :markdown
                                 Welcome **[#{h current_user.name}](#{edit_user_registration_path(current_user)})**
                     = render 'devise/menu/registration_items'
+                    %li
+                        %center
+                            |
                     = render 'devise/menu/login_items'
         #content
-            #notifications
-                .notice= notice
-                .alert= alert
-            = yield
+            - if notice || alert
+                #notifications
+                    - if notice
+                        .notice= notice
+                    - if alert
+                        .error= alert
+            #content_inner
+                = yield

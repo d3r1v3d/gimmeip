@@ -5,11 +5,14 @@ gem 'rails', '>=3.0.1'
 # provides authentication and user management support
 gem 'devise'
 
+# enables role-based permissions and authorization checks
+gem 'cancan', '>=1.4'
+
 # introduces a set of stylesheets with a lot of aesthetic defaults
 gem 'flutie'
 
 # HAML / SASS support
-gem 'haml', '>= 3.0.0'
+gem 'haml', '>=3.0.0'
 gem 'haml-rails'
 
 # necessary for Markdown support

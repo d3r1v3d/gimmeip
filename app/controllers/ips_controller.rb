@@ -1,4 +1,7 @@
 class IpsController < ApplicationController
+    before_filter :authenticate_user!, :except => [:show, :index]
+    load_and_authorize_resource
+
     # GET /ips
     # GET /ips.xml
     def index
@@ -13,12 +16,12 @@ class IpsController < ApplicationController
     # GET /ips/1
     # GET /ips/1.xml
     def show
-        @ip = Ip.find(params[:id])
-
         respond_to do |format|
             format.html # show.html.erb
             format.xml  { render :xml => @ip }
         end
+    rescue ActiveRecord::RecordNotFound
+        respond_to_not_found :html, :xml
     end
 
     # GET /ips/new
@@ -34,17 +37,20 @@ class IpsController < ApplicationController
 
     # GET /ips/1/edit
     def edit
-        @ip = Ip.find(params[:id])
+    rescue ActiveRecord::RecordNotFound
+        respond_to_not_found :html, :xml
     end
 
     # POST /ips
     # POST /ips.xml
     def create
         @ip = Ip.new(params[:ip])
+        # TODO: allow user to select IP POC from list of all users
+        # @ip.user = current_user
 
         respond_to do |format|
             if @ip.save
-                format.html { redirect_to(@ip, :notice => 'Ip was successfully created.') }
+                format.html { redirect_to(ips_url, :notice => 'Ip was successfully created.') }
                 format.xml  { render :xml => @ip, :status => :created, :location => @ip }
             else
                 format.html { render :action => "new" }
@@ -67,6 +73,8 @@ class IpsController < ApplicationController
                 format.xml  { render :xml => @ip.errors, :status => :unprocessable_entity }
             end
         end
+    rescue ActiveRecord::RecordNotFound
+        respond_to_not_found :html, :xml
     end
 
     # DELETE /ips/1
@@ -79,5 +87,7 @@ class IpsController < ApplicationController
             format.html { redirect_to(ips_url) }
             format.xml  { head :ok }
         end
+    rescue ActiveRecord::RecordNotFound
+        respond_to_not_found :html, :xml
     end
 end

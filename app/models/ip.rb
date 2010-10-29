@@ -16,7 +16,10 @@ class IpAddressValidator < ActiveModel::EachValidator
 end
 
 class Ip < ActiveRecord::Base
+    default_scope :order => :name
+
     belongs_to :user
 
     validates :address, :presence => true, :uniqueness => true, :ip_address => true
+    validates :name, :presence => true, :uniqueness => {:case_sensitive => false}
 end

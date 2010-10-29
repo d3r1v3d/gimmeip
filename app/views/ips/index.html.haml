@@ -1,23 +1,24 @@
-%h1 Listing ips
+- if can?(:create, Ip)
+    #links
+        = link_to 'New Ip', new_ip_path
 
+%h2 Listing ips
 %table
-  %tr
-    %th Address
-    %th Name
-    %th Description
-    %th
-    %th
-    %th
-
-  - @ips.each do |ip|
     %tr
-      %td= ip.address
-      %td= ip.name
-      %td= ip.description
-      %td= link_to 'Show', ip
-      %td= link_to 'Edit', edit_ip_path(ip)
-      %td= link_to 'Destroy', ip, :confirm => 'Are you sure?', :method => :delete
+        %th Name
+        %th Address
+        %th Description
+        %th POC
+        %th
+        %th
 
-%br
-
-= link_to 'New Ip', new_ip_path
+    - @ips.each do |ip|
+        %tr
+        %td= link_to_if can?(:read, ip), ip.name, ip
+        %td= ip.address
+        %td= ip.description
+        %td
+            :markdown
+                [#{h ip.user.name}](mailto:#{h ip.user.email})
+        %td= link_to_if can?(:update, ip), 'Edit', edit_ip_path(ip)
+        %td= link_to_if can?(:destroy, ip), 'Destroy', ip, :confirm => 'Are you sure?', :method => :delete
