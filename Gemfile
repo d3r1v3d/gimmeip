@@ -25,6 +25,9 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 # introduces foreign key support in Active Record for compatible database back-ends (e.g. MySQL)
 gem 'foreigner', :git => 'git://github.com/matthuhiggins/foreigner.git'
 
+# used for deployment
+gem 'capistrano'
+
 group :development, :test do
     # needed for generating Devise views
     gem 'hpricot'
