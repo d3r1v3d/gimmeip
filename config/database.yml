@@ -20,5 +20,7 @@ production:
     encoding: utf8
     reconnect: false
     database: gimmeip
+    username: gimmeip
     password: gimmeip
+    host: localhost
     socket: /var/run/mysqld/mysqld.sock

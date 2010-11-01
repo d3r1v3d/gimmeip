@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
     # :rememberable => allows users to be 'remembered' using a saved cookie
     # :trackable => maintains various log-in metrics: sign-in count, timestamps, IP address, etc
     # :validatable => allows for customizable validation of user e-mail and password attributes
-    devise :database_authenticatable, :registerable, :confirmable,
+    devise :database_authenticatable, :registerable,
            :recoverable, :rememberable, :trackable, :validatable
 
     attr_accessible :name, :email, :password, :password_confirmation, :remember_me

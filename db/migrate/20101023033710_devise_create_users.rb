@@ -7,7 +7,6 @@ class DeviseCreateUsers < ActiveRecord::Migration
             t.recoverable
             t.rememberable
             t.trackable
-            t.confirmable
             t.timestamps
         end
 
