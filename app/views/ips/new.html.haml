@@ -1,5 +1,6 @@
 #main_table
     %h2 New ip
-
     = render 'form'
-    = link_to 'Back', ips_path
+    .links
+        %ul
+            %li= link_to 'Back', :back

@@ -3,7 +3,9 @@
         = link_to 'New Ip', new_ip_path
 
 #main_table
-    %h2 Listing IPs
+    %h2
+        :markdown
+            Listing IPs (#{@ips.count})
     %table
         %tr
             %th Name

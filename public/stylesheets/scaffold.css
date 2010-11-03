@@ -8,6 +8,10 @@ a, a:link, a:visited, a:hover {
 h1, h2, h3, h4, h5, h6 {
     color: #cbed82;
     font-family: 'Droid Serif', verdana, arial, serif;
+    margin: 0;
+}
+p {
+    margin: 0;
 }
 table {
     margin-bottom: 0;
@@ -19,11 +23,15 @@ td {
     line-height: 20px;
     border-color: #ddd;
 }
-td p {
-    margin: 0;
-}
 th {
     border-color: #eee;
+}
+ul, ol {
+    list-style-type: none;
+    margin-bottom: 0;
+}
+input[type="text"], input[type="password"], textarea {
+    border: 2px solid #454442;
 }
 div.field, div.actions {
     margin-bottom: 10px;
@@ -31,33 +39,8 @@ div.field, div.actions {
 #notice {
     color: green;
 }
-.field_with_errors {
-    display: table;
-}
-#error_explanation {
-    width: 450px;
-    border: 2px solid red;
-    padding: 7px;
-    padding-bottom: 0;
-    margin-bottom: 20px;
-    background-color: #454442;
-}
-#error_explanation h2 {
-    text-align: left;
-    font-weight: bold;
-    padding: 5px 5px 5px 15px;
-    font-size: 12px;
-    margin: -7px;
-    margin-bottom: 0px;
-    background-color: #c00;
-    color: #fff;
-}
-#error_explanation ul {
-    margin: 10px;
-    margin-bottom: 0;
-}
-#error_explanation li {
-    margin-bottom: 10px;
+.clear {
+    clear: both;
 }
 /* Header */
 #header, #content {
@@ -98,7 +81,6 @@ div.field, div.actions {
     float: right;
     margin: 0;
     margin-right: 20px;
-    list-style-type: none;
 }
 #header .user_panel ul li { 
     float:left;
@@ -113,6 +95,47 @@ div.field, div.actions {
     padding: 20px;
     background-color: #555;
 }
-#main_table table {
+#main_table > h2 {
+    margin-bottom: 20px;
+}
+/* Forms */
+form .label_container, form .field_container {
+    width: 100%;
+}
+form .label_container {
+    margin: 5px 0;
+}
+form .label_container h3 {
+    font-weight: normal;
+}
+form .field_container {
+    line-height: 2em;
+}
+form .field, form .error_explanation {
+    float: left;
+    display: inline;
+}
+form .field {
+    padding: 5px 0;
+}
+form .error_explanation {
+    margin-left: 20px; 
+    padding: 5px 10px;
+    font-weight: bold; 
+    -moz-border-radius: 6px; 
+    background-color: #c02942; 
+    border: 2px solid #ff6b6b; 
+}
+form .field_with_errors {
+    display: table;
+}
+form .field_with_errors input[type="text"], .field_with_errors input[type="password"] {
+    background-color: #ffb8b8;
+}
+.links ul {
+    margin: 0;
+    margin-top: 20px;
+}
+.links li {
     margin-top: 10px;
 }

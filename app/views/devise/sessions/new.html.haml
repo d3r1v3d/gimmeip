@@ -1,15 +1,14 @@
 #main_table
     %h2 Sign in
+    %hr
 
     = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
-        %p
-            = f.label :email, 'Username or e-mail address'
-            %br/
-            = f.text_field :email
-        %p
-            = f.label :password
-            %br/
-            = f.password_field :password
-        %p= f.submit 'Sign in'
-
-    = render :partial => 'devise/shared/links'
+        %ul
+            %li
+                - render_field f.label(:email, 'Username or E-mail Address'), f.text_field(:email), resource.errors[:email]
+            %li
+                - render_field f.label(:password), f.password_field(:password), resource.errors[:password]
+            %li= f.submit 'Sign in'
+            %li
+                .links
+                    = render :partial => 'devise/shared/links'
