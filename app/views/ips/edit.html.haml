@@ -2,6 +2,7 @@
     %h2 Editing IP
 
     = render 'form'
-    = link_to 'Show', @ip
-    \|
-    = link_to 'Back', ips_path
+    .links
+        %ul
+            %li
+                = link_to 'Back', ips_path

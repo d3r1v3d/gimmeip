@@ -50,7 +50,7 @@ class IpsController < ApplicationController
 
         respond_to do |format|
             if @ip.save
-                format.html { redirect_to(ips_url, :notice => 'Ip was successfully created.') }
+                format.html { redirect_to(ips_url, :notice => "#{@ip.name} (#{@ip.address}) was successfully created.") }
                 format.xml  { render :xml => @ip, :status => :created, :location => @ip }
             else
                 format.html { render :action => "new" }
@@ -66,7 +66,7 @@ class IpsController < ApplicationController
 
         respond_to do |format|
             if @ip.update_attributes(params[:ip])
-                format.html { redirect_to(@ip, :notice => 'Ip was successfully updated.') }
+                format.html { redirect_to(ips_url, :notice => "#{@ip.name} (#{@ip.address}) was successfully updated.") }
                 format.xml  { head :ok }
             else
                 format.html { render :action => "edit" }

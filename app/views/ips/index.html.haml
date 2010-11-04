@@ -13,17 +13,15 @@
             %th Description
             %th POC
             %th
-            %th
 
         - @ips.each do |ip|
             %tr
                 %td
                     :markdown
-                        **#{link_to_if can?(:read, ip), ip.name, ip}**
+                        **#{link_to_if can?(:read, ip), ip.name, edit_ip_path(ip)}**
                 %td= ip.address
                 %td= ip.description
                 %td
                     :markdown
                         [#{h ip.user.name}](mailto:#{h ip.user.email})
-                %td= link_to_if can?(:update, ip), 'Edit', edit_ip_path(ip)
-                %td= link_to_if can?(:destroy, ip), 'Destroy', ip, :confirm => 'Are you sure?', :method => :delete
+                %td= link_to_if can?(:destroy, ip), 'Delete', ip, :confirm => 'Are you sure?', :method => :delete
