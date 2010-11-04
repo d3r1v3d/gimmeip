@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(:version => 20101029143226) do
 
   create_table "ips", :force => true do |t|
-    t.string   "address",     :null => false
+    t.string   "address"
     t.string   "name"
     t.text     "description"
     t.datetime "created_at"
