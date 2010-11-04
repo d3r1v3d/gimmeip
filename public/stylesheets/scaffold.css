@@ -21,7 +21,7 @@ caption, th, td {
 }
 td {
     line-height: 20px;
-    border-color: #ddd;
+    border-color: #aaa;
 }
 th {
     border-color: #eee;
@@ -43,6 +43,33 @@ div.field, div.actions {
 .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default,
 .ui-widget-header {
     border: 0;
+}
+.ui-widget-header {
+    font-weight: normal;
+    font-size: 12px;
+}
+.ui-toolbar {
+    padding: 10px;
+}
+/* DataTable overrides */
+.dataTables_wrapper {
+    min-height: 0;
+}
+table.display td {
+    /*border-right: 1px solid #aaa;*/
+    color: #eee;
+}
+tr.odd {
+
+}
+tr.even {
+
+}
+tr.odd td.sorting_1, tr.odd td.sorting_2, tr.odd td.sorting_3 {
+	background-color: #777;
+}
+tr.even td.sorting_1, tr.even td.sorting_2, tr.even td.sorting_3 {
+	background-color: #999;
 }
 /* Header */
 #header, #content {
@@ -99,9 +126,6 @@ div.field, div.actions {
 }
 #main_table > h2 {
     margin-bottom: 20px;
-}
-#main_table tr.mine {
-    background-color: #333;
 }
 /* Forms */
 form .label_container, form .field_container {

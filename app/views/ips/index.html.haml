@@ -16,7 +16,7 @@
                 %th
         %tbody
             - @ips.each do |ip|
-                %tr{:class => (ip.user == current_user) && 'mine'}
+                %tr
                     %td
                         :markdown
                             **#{link_to_if can?(:read, ip), ip.name, edit_ip_path(ip)}**
