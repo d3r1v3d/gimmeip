@@ -188,6 +188,7 @@ jQuery(function ($) {
         $('table.display').dataTable({
             bJQueryUI: true,
             sPaginationType: 'full_numbers',
+            iDisplayLength: 50,
             aoColumns: [
                 /* Name */ null,
                 /* Address */ {
