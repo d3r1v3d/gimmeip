@@ -3,9 +3,13 @@
     %head
         %title Gimme IP
         = stylesheet_link_tag :flutie
-        = stylesheet_link_tag :all
         = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Droid+Serif&subset=latin'
+        = stylesheet_link_tag collect_stylesheet_files(File.join('themes', 'smoothness'))
+        = stylesheet_link_tag collect_stylesheet_files('plugins')
+        = stylesheet_link_tag 'scaffold'
         = javascript_include_tag :defaults
+        = javascript_include_tag collect_javascript_files('plugins')
+        = javascript_include_tag 'gimmeip'
         = csrf_meta_tag
     %body
         #header

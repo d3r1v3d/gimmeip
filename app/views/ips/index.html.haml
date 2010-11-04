@@ -6,22 +6,23 @@
     %h2
         :markdown
             Listing IPs (#{@ips.count})
-    %table
-        %tr
-            %th Name
-            %th Address
-            %th Description
-            %th POC
-            %th
-
-        - @ips.each do |ip|
+    %table.display
+        %thead
             %tr
-                %td
-                    :markdown
-                        **#{link_to_if can?(:read, ip), ip.name, edit_ip_path(ip)}**
-                %td= ip.address
-                %td= ip.description
-                %td
-                    :markdown
-                        [#{h ip.user.name}](mailto:#{h ip.user.email})
-                %td= link_to_if can?(:destroy, ip), 'Delete', ip, :confirm => 'Are you sure?', :method => :delete
+                %th Name
+                %th Address
+                %th Description
+                %th POC
+                %th
+        %tbody
+            - @ips.each do |ip|
+                %tr{:class => (ip.user == current_user) && 'mine'}
+                    %td
+                        :markdown
+                            **#{link_to_if can?(:read, ip), ip.name, edit_ip_path(ip)}**
+                    %td= ip.address
+                    %td= ip.description
+                    %td
+                        :markdown
+                            [#{h ip.user.name}](mailto:#{h ip.user.email})
+                    %td= link_to_if can?(:destroy, ip), 'Delete', ip, :confirm => 'Are you sure?', :method => :delete

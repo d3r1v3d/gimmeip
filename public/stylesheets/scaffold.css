@@ -30,9 +30,6 @@ ul, ol {
     list-style-type: none;
     margin-bottom: 0;
 }
-input[type="text"], input[type="password"], textarea {
-    border: 2px solid #454442;
-}
 div.field, div.actions {
     margin-bottom: 10px;
 }
@@ -41,6 +38,11 @@ div.field, div.actions {
 }
 .clear {
     clear: both;
+}
+/* jQuery UI overrides */
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default,
+.ui-widget-header {
+    border: 0;
 }
 /* Header */
 #header, #content {
@@ -98,6 +100,9 @@ div.field, div.actions {
 #main_table > h2 {
     margin-bottom: 20px;
 }
+#main_table tr.mine {
+    background-color: #333;
+}
 /* Forms */
 form .label_container, form .field_container {
     width: 100%;
@@ -117,6 +122,9 @@ form .field, form .error_explanation {
 }
 form .field {
     padding: 5px 0;
+}
+form input[type="text"], form input[type="password"], textarea {
+    border: 2px solid #454442;
 }
 form .error_explanation {
     margin-left: 20px; 

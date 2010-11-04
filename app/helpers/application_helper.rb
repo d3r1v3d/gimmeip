@@ -1,4 +1,23 @@
 module ApplicationHelper
+    # NOTE: Lifted from ActionView::Helpers::AssetTagHelper#collect_asset_files since it's
+    #       private to that module
+    def collect_asset_files(*path)
+        dir = path.first
+
+        Dir[File.join(*path.compact)].collect do |file|
+            next if file =~ /\.min\./i
+            file[-(file.size - dir.size - 1)..-1].sub(/\.\w+$/, '')
+        end.compact.sort
+    end
+
+    def collect_javascript_files(javascript_subdir)
+        collect_asset_files(config.javascripts_dir, javascript_subdir, '**', '*.js')
+    end
+
+    def collect_stylesheet_files(stylesheet_subdir)
+        collect_asset_files(config.stylesheets_dir, stylesheet_subdir, '**', '*.css')
+    end
+
     def render_field(label, field, errors, description='')
         #.label_container
         #   %h3= label
