@@ -24,7 +24,7 @@ en:
             send_instructions: 'You will receive an email with instructions about how to confirm your account in a few minutes.'
             confirmed: 'Your account was successfully confirmed. You are now signed in.'
         registrations:
-            signed_up: 'You have succesfully signed up.'
+            signed_up: 'You have successfully signed up.'
             updated: 'You updated your account successfully.'
             destroyed: 'Your account was successfully cancelled.'
         unlocks:

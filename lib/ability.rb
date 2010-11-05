@@ -2,7 +2,6 @@ class Ability
     include CanCan::Ability
 
     def initialize(user)
-        p user
         global_perms
         return if !user
 

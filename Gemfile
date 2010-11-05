@@ -35,8 +35,8 @@ group :development, :test do
 end
 
 group :test do
-    gem 'cucumber-rails'
-    gem 'capybara'
-    gem 'factory_girl_rails', :git => 'git://github.com/thoughtbot/factory_girl_rails.git'
+    gem 'cucumber-rails', '>=0.3.2'
+    gem 'capybara', :git => 'git://github.com/jnicklas/capybara.git'
     gem 'rspec-rails', '>=2.0.1'
+    gem 'factory_girl_rails', '>=1.0'
 end
