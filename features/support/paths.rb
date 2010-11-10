@@ -23,6 +23,9 @@ module NavigationHelpers
         when /the password reset page/i
             '/users/password/new'
 
+        when /the edit account page/i
+            '/users/edit'
+
         # Add more mappings here.
         # Here is an example that pulls values out of the Regexp:
         #

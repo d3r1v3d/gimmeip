@@ -24,6 +24,6 @@ Scenario Outline: Attempt to log in
         | whee@fakey.org    |               | see "Invalid email or password."  |
 
 Scenario: Log out
-    Given I am logged in
+    Given I am logged in as "minimal"
     When I go to the sign out link
     Then I should see "Signed out successfully."
